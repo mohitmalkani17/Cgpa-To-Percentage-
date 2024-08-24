@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA to Percentage Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CGPA to Percentage Calculator</h1>
+        <input type="number" id="cgpa" placeholder="Enter your CGPA">
+        <button onclick="calculatePercentage()">Convert</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculatePercentage() {
+            const cgpa = parseFloat(document.getElementById('cgpa').value);
+            if (!isNaN(cgpa)) {
+                const percentage = cgpa * 9.5;  // You can change the formula if needed
+                document.getElementById('result').textContent = `Percentage: ${percentage.toFixed(2)}%`;
+            } else {
+                document.getElementById('result').textContent = "Please enter a valid CGPA.";
+            }
+        }
+    </script>
+</body>
+</html>
